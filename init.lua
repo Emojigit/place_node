@@ -12,6 +12,7 @@ end
 minetest.register_chatcommand("place", {
 	params = "<x> <y> <x> <nodename>",
 	description = "Place block",
+	privs = {creative = true},
 	func = function(name, param)
         splited = split(param," ")
         if not(tonumber(splited[1]) and tonumber(splited[2]) and tonumber(splited[3])) then
@@ -32,7 +33,8 @@ minetest.register_chatcommand("place", {
 
 minetest.register_chatcommand("place_here", {
     params = "<node>",
-	description = "Place block at player's pos",
+    privs = {creative = true},
+    description = "Place block at player's pos",
     func = function(name, param)
         local player = minetest.get_player_by_name(name)
         if not player then
@@ -54,6 +56,7 @@ minetest.register_chatcommand("place_here", {
 
 minetest.register_chatcommand("setblock", {
 	params = "<x> <y> <x> <nodename>",
+    	privs = {creative = true},
 	description = "Set a block",
 	func = function(name, param)
         splited = split(param," ")
@@ -75,7 +78,8 @@ minetest.register_chatcommand("setblock", {
 
 minetest.register_chatcommand("setblock_here", {
     params = "<node>",
-	description = "Set a block at player's pos",
+    privs = {creative = true},
+    description = "Set a block at player's pos",
     func = function(name, param)
         local player = minetest.get_player_by_name(name)
         if not player then
