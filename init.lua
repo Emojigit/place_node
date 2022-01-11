@@ -1,6 +1,6 @@
 minetest.register_privilege("setblock", {
 	description = "Player can use place and setblock command.",
-	give_to_singleplayer= true,
+	give_to_singleplayer= false,
 })
 
 local function split (inputstr, sep)
